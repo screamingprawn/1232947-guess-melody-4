@@ -1,11 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {WelcomeScreen} from './welcomescreen.jsx';
 
 const App = (props) => {
-  // eslint-disable-next-line react/prop-types
-  const mistakes = props.mistakes;
   return (
-    <WelcomeScreen mistakes ={mistakes}/>);
+    <WelcomeScreen mistakes ={props.mistakes}/>);
+};
+
+App.propTypes = {
+  mistakes:  PropTypes.number.isRequired
 };
 
 export {App};
