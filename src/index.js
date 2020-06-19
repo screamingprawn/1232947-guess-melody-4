@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './components/app.jsx';
 
+const mistakes = 3;
+
 function init() {
   ReactDOM.render(
-      <App />,
+      <App mistakes={mistakes}/>,
       document.querySelector(`#root`)
   );
 }

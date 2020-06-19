@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {WelcomeScreen} from './welcomescreen.jsx';
 
-const App = () => {
+const App = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const mistakes = props.mistakes;
   return (
-    <WelcomeScreen />);
+    <WelcomeScreen mistakes ={mistakes}/>);
 };
 
 export {App};
