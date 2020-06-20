@@ -6,6 +6,7 @@ describe(`App tests`, () => {
   it(`App correctly renders after relaunch`, () => {
     const tree = renderer
   .create(<App
+    handler={jest.fn()}
     mistakes={0} />)
   .toJSON();
 

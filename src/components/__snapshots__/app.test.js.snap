@@ -1,20 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App tests App correctly renders after relaunch 1`] = `
-<div>
-  <h3
-    onClick={[Function]}
+<section
+  className="welcome"
+>
+  <div
+    className="welcome__logo"
   >
-    Угадай мелодию!
-  </h3>
-  <h3
-    onClick={[Function]}
+    <img
+      alt="Угадай мелодию"
+      height="83"
+      src="img/melody-logo.png"
+      width="186"
+    />
+  </div>
+  <button
+    className="welcome__button"
+    onClick={[MockFunction]}
   >
-    У тебя есть 
-    0
-     
-    попыток
-    .
-  </h3>
-</div>
+    <span
+      className="visually-hidden"
+    >
+      Начать игру
+    </span>
+  </button>
+  <h2
+    className="welcome__rules-title"
+  >
+    Правила игры
+  </h2>
+  <p
+    className="welcome__text"
+  >
+    Правила просты:
+  </p>
+  <ul
+    className="welcome__rules-list"
+  >
+    <li>
+      Нужно ответить на все вопросы.
+    </li>
+    <li>
+      Можно допустить 
+      0
+       
+      ошибок
+      .
+    </li>
+  </ul>
+  <p
+    className="welcome__text"
+  >
+    Удачи!
+  </p>
+</section>
 `;
