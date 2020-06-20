@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App correctly renders after relaunch 1`] = `
+<div>
+  <h3
+    onClick={[Function]}
+  >
+    Угадай мелодию!
+  </h3>
+  <h3
+    onClick={[Function]}
+  >
+    У тебя есть 
+    0
+     
+    попыток
+    .
+  </h3>
+</div>
+`;

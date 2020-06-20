@@ -16,7 +16,7 @@ const WelcomeScreen = (props) => {
 
 /* PropTypes */
 WelcomeScreen.propTypes = {
-  mistakes:  PropTypes.number.isRequired
+  mistakes: PropTypes.number.isRequired
 };
 
 export {WelcomeScreen};

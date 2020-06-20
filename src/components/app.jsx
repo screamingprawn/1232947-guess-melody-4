@@ -8,7 +8,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  mistakes:  PropTypes.number.isRequired
+  mistakes: PropTypes.number.isRequired
 };
 
 export {App};
