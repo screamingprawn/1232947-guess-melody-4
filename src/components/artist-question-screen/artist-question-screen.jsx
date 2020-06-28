@@ -52,8 +52,8 @@ const ArtistQuestionScreen = (props) => {
               />
               <label className="artist__name" htmlFor={`variant-${i}`}>
                 <img className="artist__picture"
-                  src={variant.picture}
-                  alt={variant.artist}/>
+                     src={variant.picture}
+                     alt={variant.artist}/>
                 {variant.artist}
               </label>
             </div>
