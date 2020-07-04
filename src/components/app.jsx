@@ -5,11 +5,16 @@ import {WelcomeScreen} from './welcomescreen.jsx';
 class App extends PureComponent {
   constructor(props) {
     super(props);
-  }
+
+    this.state = {
+     step: -1, // показываем, что никакой экран ещё не включен
+    }
+  };
 
   render() {
     return (
-      <WelcomeScreen mistakes ={this.props.mistakes}
+      <WelcomeScreen
+        mistakes ={this.props.mistakes}
         handler = {this.props.handler}/>);
   }
 }
