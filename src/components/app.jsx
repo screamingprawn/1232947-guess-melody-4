@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {WelcomeScreen} from './welcomescreen.jsx';
 
-const App = (props) => {
-  return (
-    <WelcomeScreen mistakes ={props.mistakes}
-      handler = {props.handler}/>);
-};
+class App extends PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <WelcomeScreen mistakes ={this.props.mistakes}
+        handler = {this.props.handler}/>);
+  }
+}
 
 App.propTypes = {
   mistakes: PropTypes.number.isRequired,
