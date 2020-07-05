@@ -34,7 +34,7 @@ const GameHeader = (props) => {
 };
 
 
-GameScreen.propTypes = {
+GameHeader.propTypes = {
   type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -43,4 +43,4 @@ GameScreen.propTypes = {
 };
 
 
-export default GameScreen;
+export default GameHeader;
