@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {WelcomeScreen} from './welcomescreen.jsx';
 import ArtistQuestionScreen from './artist-question-screen/artist-question-screen.jsx';
 import GenreQuestionScreen from './genre-question-screen/genre-question-screen.jsx';
+import GameHeader from "./game-header/game-header.jsx";
 import {GameType} from "../const.js";
 
 class App extends PureComponent {
@@ -14,7 +15,7 @@ class App extends PureComponent {
     };
   }
 
-  _renderGameScreen() {
+  _renderGameHeader() {
     const mistakes = this.props.mistakes;
     const questions = this.props.questions;
 
@@ -35,24 +36,32 @@ class App extends PureComponent {
       switch (question.type) {
         case GameType.ARTIST:
           return (
-            <ArtistQuestionScreen
-              question={question}
-              onAnswer={() => {
-                this.setState((prevState) => ({
-                  step: prevState.step + 1,
-                }));
-              }}/>
+            <GameHeader
+              type={question.type}>
+              <ArtistQuestionScreen
+                question={question}
+                onAnswer={() => {
+                  this.setState((prevState) => ({
+                    step: prevState.step + 1,
+                  }));
+                }}
+              />
+            </GameHeader>
           );
 
         case GameType.GENRE:
           return (
-            <GenreQuestionScreen
-              question={question}
-              onAnswer={() => {
-                this.setState((prevState) => ({
-                  step: prevState.step + 1,
-                }));
-              }}/>
+            <GameHeader
+              type={question.type}>
+              <GenreQuestionScreen
+                question={question}
+                onAnswer={() => {
+                  this.setState((prevState) => ({
+                    step: prevState.step + 1,
+                  }));
+                }}
+              />
+            </GameHeader>
           );
       }
     }
@@ -61,7 +70,7 @@ class App extends PureComponent {
   }
 
   render() {
-    return this._renderGameScreen();
+    return this._renderGameHeader();
   }
 }
 
