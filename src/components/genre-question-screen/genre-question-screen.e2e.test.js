@@ -26,7 +26,8 @@ const question = {
 it(`One of the variants gets selected`, () => {
   const genreQuestionScreen = shallow(<GenreQuestionScreen // mount (<App >/)
     onAnswer ={jest.fn()}
-    question ={question}/>);
+    question ={question}
+    renderPlayer={() => {}}/>);
 
   const variantLabel = genreQuestionScreen.find(`input`).at(0);
   variantLabel.simulate(`change`, {target: {checked: true}});

@@ -36,7 +36,8 @@ it(`One of variants gets selected`, () => {
 
   const artistQuestionScreen = shallow(<ArtistQuestionScreen
     onAnswer ={onAnswer}
-    question ={question}/>);
+    question ={question}
+    renderPlayer={() => {}}/>);
 
   const answer = artistQuestionScreen.find(`input`).at(0);
   answer.simulate(`change`, mockEvent);
