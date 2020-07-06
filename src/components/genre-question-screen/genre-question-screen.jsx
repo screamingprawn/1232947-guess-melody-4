@@ -8,14 +8,15 @@ class GenreQuestionScreen extends PureComponent {
     super(props);
 
     this.state = {
-      answers: [false, false, false, false]
+      activeTrack: 0,
+      userAnswers: [false, false, false, false]
     };
   }
 
   render() {
     const {onAnswer, question} = this.props;
     const {variants, genre} = question;
-    const userAnswers = this.state.answers;
+    const {userAnswers, activeTrack} = this.state;
 
     return (
       <section className="game__screen">
@@ -23,13 +24,20 @@ class GenreQuestionScreen extends PureComponent {
         <form className="game__tracks"
           onSubmit={(evt) => {
             evt.preventDefault();
-            onAnswer(question, this.state.answers);
+            onAnswer(question, this.state.userAnswers);
           }}>
           {variants.map((variant, i) => (
             <div key={`${i}-${variant.src}`} className="track">
               <AudioPlayer
-                isPlaying={i === 0}
-                src={variant.src}/>
+                isPlaying={i === activeTrack}
+                src={variant.src}
+                onPlayButtonClick={() => {
+                  this.setState({
+                    activeTrack: activeTrack === i ? -1 : i,
+                  });
+                }}
+                isPlaying={i === activeTrack}/>
+
 
               <div className="game__answer">
                 <input className="game__input visually-hidden"
