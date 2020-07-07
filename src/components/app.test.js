@@ -8,7 +8,10 @@ describe(`App tests`, () => {
     const tree = renderer
   .create(<App
     mistakes={0}
-    questions={questions}/>)
+    questions={questions}
+    step={-1}
+    onWelcomeButtonClick={()=> {}}
+    onUserAnswer={() => {}}/>)
   .toJSON();
 
     expect(tree).toMatchSnapshot();

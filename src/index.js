@@ -16,7 +16,7 @@ function init() {
   ReactDOM.render(
       <Provider store={store}>
       <App
-        errorsCount={mistakes}
+        mistakes={mistakes}
         questions={questions}/>
       </Provider>,
       document.querySelector(`#root`)
