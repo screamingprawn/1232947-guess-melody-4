@@ -15,9 +15,7 @@ const mistakes = 3;
 function init() {
   ReactDOM.render(
       <Provider store={store}>
-        <App
-          mistakes={mistakes}
-          questions={questions}/>
+        <App/>
       </Provider>,
       document.querySelector(`#root`)
   );

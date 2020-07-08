@@ -72,6 +72,7 @@ class App extends PureComponent {
 const mapStateToProps = (state) => ({
   step: state.step,
   maxMistakes: state.maxMistakes,
+  questions: state.questions,
 });
 
 const mapDispatchToProps = (dispatch) => ({
