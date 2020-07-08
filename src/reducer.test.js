@@ -70,7 +70,7 @@ describe(`Action creators work correctly`, () => {
         artist: `correct`,
         src: ``,
       },
-      answers: [
+      variants: [
         {
           artist: `correct`,
           picture: ``,
@@ -98,7 +98,7 @@ describe(`Action creators work correctly`, () => {
         artist: `correct`,
         src: ``,
       },
-      answers: [
+      variants: [
         {
           artist: `correct`,
           picture: ``,
@@ -123,7 +123,7 @@ describe(`Action creators work correctly`, () => {
     expect(ActionCreator.incrementMistake({
       type: `genre`,
       genre: `jazz`,
-      answers: [
+      variants: [
         {
           genre: `rock`,
           src: ``,
@@ -148,7 +148,7 @@ describe(`Action creators work correctly`, () => {
     expect(ActionCreator.incrementMistake({
       type: `genre`,
       genre: `jazz`,
-      answers: [
+      variants: [
         {
           genre: `blues`,
           src: ``,
