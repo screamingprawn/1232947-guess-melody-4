@@ -42,7 +42,6 @@ exports[`App tests App correctly renders after relaunch 1`] = `
     </li>
     <li>
       Можно допустить 
-      0
        
       ошибок
       .

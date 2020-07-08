@@ -20,6 +20,7 @@ class App extends PureComponent {
   _renderGameHeader() {
     const {
       mistakes,
+      maxMistakes,
       questions,
       onUserAnswer,
       onWelcomeButtonClick,
@@ -31,6 +32,7 @@ class App extends PureComponent {
     if (step === -1 || step >= questions.length) {
       return (
         <WelcomeScreen handler = {onWelcomeButtonClick}
+          maxMistakes={maxMistakes}
           mistakes = {mistakes}/>);
     }
 
@@ -69,6 +71,7 @@ class App extends PureComponent {
 
 const mapStateToProps = (state) => ({
   step: state.step,
+  maxMistakes: state.maxMistakes,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -76,13 +79,13 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.incrementStep());
   },
   onUserAnswer(question, answer) {
-    dispatch(ActionCreator.incrementStep());
     dispatch(ActionCreator.incrementMistake(question, answer));
+    dispatch(ActionCreator.incrementStep());
   },
 });
 
 App.propTypes = {
-  mistakes: PropTypes.number.isRequired,
+  maxMistakes: PropTypes.number.isRequired,
   questions: PropTypes.array.isRequired, // maybe define this better
   onUserAnswer: PropTypes.func.isRequired,
   onWelcomeButtonClick: PropTypes.func.isRequired,
