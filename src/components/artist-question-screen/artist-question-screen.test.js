@@ -27,7 +27,7 @@ it(`ArtistQuestionScreen is rendered correctly`, () => {
         question={question}
         onAnswer={() => {}}
         renderPlayer={() => {}}/>, {
-       createNodeMock: () => {
+        createNodeMock: () => {
           return {};
         }
       }

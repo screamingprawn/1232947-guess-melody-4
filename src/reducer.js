@@ -17,7 +17,7 @@ const ActionCreator = {
     payload: 1,
   }),
 
- incrementMistake: (question, userAnswer) => {
+  incrementMistake: (question, userAnswer) => {
     let answerIsCorrect = false;
 
     switch (question.type) {

@@ -5,7 +5,7 @@ import {GameType} from "../../const.js";
 class ArtistQuestionScreen extends PureComponent {
   render() {
     const {onAnswer, question, renderPlayer} = this.props;
-    const {variants, song} = question
+    const {variants, song} = question;
 
     return (
       <section className="game__screen">
@@ -18,30 +18,31 @@ class ArtistQuestionScreen extends PureComponent {
         </div>
         <form className="game__artist">
           {variants.map((variant, i) => (
-          <div className="artist"
-            key={variant.artist}>
-            <input className="artist__input visually-hidden"
-              type="radio"
-              name="artistAnswer"
-              value={`variant-${i}`}
-              id={`variant-${i}`}
-              onChange={(evt) => {
-                evt.preventDefault();
-                onAnswer(question, variant);
-              }}
-            />
-            <label className="artist__name" htmlFor={`variant-${i}`}>
-              <img className="artist__picture"
-                src={variant.picture}
-                alt={variant.artist}/>
-              {variant.artist}
-            </label>
-          </div>
-        ))}
-      </form>
-    </section>
-  );
-}};
+            <div className="artist"
+              key={variant.artist}>
+              <input className="artist__input visually-hidden"
+                type="radio"
+                name="artistAnswer"
+                value={`variant-${i}`}
+                id={`variant-${i}`}
+                onChange={(evt) => {
+                  evt.preventDefault();
+                  onAnswer(question, variant);
+                }}
+              />
+              <label className="artist__name" htmlFor={`variant-${i}`}>
+                <img className="artist__picture"
+                  src={variant.picture}
+                  alt={variant.artist}/>
+                {variant.artist}
+              </label>
+            </div>
+          ))}
+        </form>
+      </section>
+    );
+  }
+}
 
 ArtistQuestionScreen.propTypes = {
   onAnswer: PropTypes.func.isRequired,
