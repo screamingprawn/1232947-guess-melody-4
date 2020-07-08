@@ -14,7 +14,7 @@ class GenreQuestionScreen extends PureComponent {
   render() {
     const {onAnswer, question, renderPlayer} = this.props;
     const {variants, genre} = question;
-    const {userAnswers, activeTrack} = this.state;
+    const {userAnswers} = this.state;
 
     return (
       <section className="game__screen">
