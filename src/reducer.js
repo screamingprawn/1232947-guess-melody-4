@@ -45,7 +45,7 @@ const isArtistAnswerCorrect = (question, userAnswer) => {
 
 const isGenreAnswerCorrect = (question, userAnswer) => {
   return userAnswer.every((it, i) => {
-  return it === (question.variants[i].genre === question.genre);
+    return it === (question.variants[i].genre === question.genre);
   });
 };
 

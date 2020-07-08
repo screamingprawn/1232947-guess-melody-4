@@ -19,7 +19,6 @@ class App extends PureComponent {
 
   _renderGameHeader() {
     const {
-      mistakes,
       maxMistakes,
       questions,
       onUserAnswer,
@@ -32,8 +31,7 @@ class App extends PureComponent {
     if (step === -1 || step >= questions.length) {
       return (
         <WelcomeScreen handler = {onWelcomeButtonClick}
-          maxMistakes={maxMistakes}
-          mistakes = {mistakes}/>);
+          mistakes = {maxMistakes}/>);
     }
 
     if (question) {

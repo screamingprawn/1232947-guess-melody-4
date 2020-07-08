@@ -29,6 +29,7 @@ const WelcomeScreen = (props) => {
 
 /* PropTypes */
 WelcomeScreen.propTypes = {
+  mistakes: PropTypes.number.isRequired,
   handler: PropTypes.func.isRequired
 };
 
